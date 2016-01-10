@@ -12,6 +12,9 @@
         echo 'Hi, my name is '.$name,'. and I am a level '.$level.' 
         '.$what;
         
+        
+        
+        
         $game = new Game($squares);
         if ($game->winner('x')){
         echo 'You win.'; }
@@ -20,14 +23,25 @@
         else {            
         echo ' no winner.'; }
       
-        
+        function display() {
+            echo '<table cols="3" style="font-size:large; font-weight:bold">';
+            echo '<tr>';
+            for ($pos=0; $pos<9;$pos++) {
+                echo '<td>-</td>';
+                if ($pos %3 == 2) echo '</tr><tr>'; 
+              
+            }
+            echo '</tr>';
+            echo '</table>';
+   
+        }
         
         
         
 
         ?>
-    </body>
-    <?php
+        
+        <?php
         
         
         class Game {
@@ -49,14 +63,17 @@
             ($this->position[7] == $token) &&
              ($this->position[8] == $token)) {
                       $won - true;
+             }
         
         
-        
-        
+  
+}
         
         
 
         ?>
+    </body>
+    
 </html>
 
 
