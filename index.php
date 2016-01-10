@@ -13,8 +13,10 @@
         echo 'You win.'; }
         else if ($game->winner('o')) {
         echo 'i win'; }
-        else {            
-        echo ' no winner.'; }
+        else {         
+            
+        echo ' no winner.';
+        }
       
         
         function display() {
@@ -22,12 +24,10 @@
             echo '<tr>';
             for ($pos=0; $pos<9;$pos++) {
                 echo '<td>-</td>';
-                if ($pos %3 == 2) {echo '</tr><tr>'; } 
-              
+                if ($pos %3 == 2) {echo '</tr><tr>'; }               
             }
             echo '</tr>';
-            echo '</table>';
-   
+            echo '</table>';   
         }
 
 
