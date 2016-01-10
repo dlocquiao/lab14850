@@ -36,16 +36,12 @@
         
     </body>
     <?php
-        
-        
+
         class Game {
             var $position;
-            
             function __construct($squares) {
-                
                 $this->position = str_split($squares);
             }
-            
                 function winner($token) { 
                     $won = false;
         if (($this->position[0] == $token)  &&
@@ -81,11 +77,9 @@
              else if (($this->position[2] == $token)  &&
             ($this->position[4] == $token) &&
              ($this->position[6] == $token)) {
-             $won = true; }
-     
+             $won = true; }    
+             
 }
-        
-        
         }
         
         
