@@ -44,7 +44,9 @@
                 $this->position = $_GET['board'];
                 $this->position = str_split($squares);
                 
+                
             }
+            
                 function winner($token) { 
                     $won = false;
         if (($this->position[0] == $token)  &&
