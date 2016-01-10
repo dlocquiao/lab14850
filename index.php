@@ -6,7 +6,8 @@
     </head>
     <body>
         <?php
-        
+      
+
      
         $game = new Game($squares);
         if ($game->winner('x')){
@@ -17,18 +18,16 @@
             
         echo ' no winner.';
         }
-      
         
-        function display() {
-            echo '<table cols="3" style="font-size:large; font-weight:bold">';
-            echo '<tr>';
-            for ($pos=0; $pos<9;$pos++) {
-                echo '<td>-</td>';
-                if ($pos %3 == 2) {echo '</tr><tr>'; }               
-            }
-            echo '</tr>';
-            echo '</table>';   
-        }
+        //function display() {
+            //echo '<table cols="3" style="font-size:large; font-weight:bold">';
+            // for ($pos=0; $pos<9;$pos++) {
+                //echo '<td>-</td>';
+                //if ($pos %3 == 2) {echo '</tr><tr>'; }               
+           // }
+            //echo '</tr>';
+            //echo '</table>';   
+       // }
 
 
         ?>
@@ -38,9 +37,13 @@
     <?php
 
         class Game {
+            
             var $position;
+            
             function __construct($squares) {
+                $this->position = $_GET['board'];
                 $this->position = str_split($squares);
+                
             }
                 function winner($token) { 
                     $won = false;
