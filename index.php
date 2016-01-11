@@ -85,7 +85,7 @@
 
             //generates a HTML table with three rows
             function display() {
-                echo '<table width="500" height="500" cols="3" style="font-size:large; font-weight:bold" border="1" bgcolor="#01FF00">';
+                echo '<table width="500" cols="3" style="font-size:large; font-weight:bold" border="1" bgcolor="#01FF00">';
                 echo '<tr>'; // open the first row
                 for ($pos = 0; $pos < 9; $pos++) { 
                     echo $this->show_cell($pos); //to display tokens at respective position
@@ -101,7 +101,7 @@
                 $token = $this->position[$which];
                 //if value not a dash, display it
                 if ($token <> '-') {
-                    return '<td>' . $token . '</td>';
+                    return '<td  height="500">' . $token . '</td>';
                 }
                 //if value is a dash, make it so that once it's clicked
                 //it will show up either as an 'x' or 'o'
