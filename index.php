@@ -8,7 +8,7 @@
         <?php
         //A00888565 Derrick Locquiao Set A Lab 1
         
-        //see if board if board parameter was passed
+        //see if board parameter was passed
         if (!isset($_GET['board'])) {
             echo "No board given. New game started. <br>";
             $squares = "---------";
@@ -44,7 +44,6 @@
             function __construct($squares) {
                 $this->position = str_split($squares);
             }
-
             //winner method
             function winner($token) {
                 $won = false;
@@ -85,6 +84,7 @@
             }
 
             //generates a HTML 3x3 table
+            
             function display() {
                 echo '<table width="350" cols="3" style="font-size:large; font-weight:bold" border="1" bgcolor="#01FF00">';
                 echo '<tr>'; // open the first row
@@ -102,17 +102,16 @@
                 $token = $this->position[$which];
                 //if value not a dash, display it
                 if ($token <> '-') {
-                    return '<td >' . $token . '</td>';
+                    return '<td>' . $token . '</td>';
                 }
                 //if value is a dash, make it so that once it's clicked
                 //it will show up either as an 'x' or 'o'
                 $this->newposition = $this->position;
                 $this->newposition[$which] = 'x';
                 $move = implode($this->newposition); //make a string from the board array
-                $link = '?board=' . $move; //makes the link update with the corresponding board after each move                
-                return '<td><a href=' . $link . '>-</a></td>'; //returns cell with an anchor and showing a hyphen
+                $link = '?board=' . $move; //updates the board after each move                
+                return '<td><a href=' . $link . '>-</a></td>'; //returns cell with anchor
             }
-
             //represents the other player
             function pick_move() {
                 //randomly picks a open square
