@@ -101,7 +101,7 @@
                 $token = $this->position[$which];
                 //if value not a dash, display it
                 if ($token <> '-') {
-                    return '<td  height="500">' . $token . '</td>';
+                    return '<td >' . $token . '</td>';
                 }
                 //if value is a dash, make it so that once it's clicked
                 //it will show up either as an 'x' or 'o'
