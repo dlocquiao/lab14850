@@ -28,7 +28,8 @@
         //calls display method so we can actually see the noard
         $game->display();
         //button to reload game in this case reset the game
-        echo "<br> <a href='?'>Reset</a> <br>";
+        echo "<br> <a href='?'>Reset</a> <br> ";
+        
         ?>
         
     </body>
@@ -83,7 +84,7 @@
                 return $won;
             }
 
-            //generates a HTML table with three rows
+            //generates a HTML 3x3 table
             function display() {
                 echo '<table width="350" cols="3" style="font-size:large; font-weight:bold" border="1" bgcolor="#01FF00">';
                 echo '<tr>'; // open the first row
@@ -112,17 +113,17 @@
                 return '<td><a href=' . $link . '>-</a></td>'; //returns cell with an anchor and showing a hyphen
             }
 
-            //represents another player playing against you
+            //represents the other player
             function pick_move() {
                 //randomly picks a open square
                 $fill = false;
                 do {
                     $next = rand(0, 8);
-                    if ($this->position[$next] == '-') { //if it's empty...
-                        $this->position[$next] = 'o'; //set it!
+                    if ($this->position[$next] == '-') { //if the box is empty
+                        $this->position[$next] = 'o'; //o will be placed
                         $fill = true;
                     }
-                } while (!$fill); //keep picking until a legal move is found
+                } while (!$fill); //continues to pick until a legal move can be made
             }
         }
     ?>
