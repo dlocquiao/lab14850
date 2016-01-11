@@ -8,6 +8,7 @@
     <body>
         <?php
         echo 'Welcome! Tic-Tac-Toe';
+        echo '<br/>';
        $game = new Game($squares);
         if($game->winner('x'))
                 echo 'You win!';
