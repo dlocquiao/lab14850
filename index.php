@@ -85,7 +85,7 @@
 
             //generates a HTML table with three rows
             function display() {
-                echo '<table  cols="3" style="font-size:large; font-weight:bold" border="1" bgcolor="#01FF00">';
+                echo '<table width="500" cols="3" style="font-size:large; font-weight:bold" border="1" bgcolor="#01FF00">';
                 echo '<tr>'; // open the first row
                 for ($pos = 0; $pos < 9; $pos++) { 
                     echo $this->show_cell($pos); //to display tokens at respective position
